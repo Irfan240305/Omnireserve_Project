@@ -64,33 +64,24 @@ The project demonstrates practical backend development concepts including authen
  
 ```
                 Client
-                   │
-                   ▼
-          Spring Boot REST API
-                   │
-        ┌──────────┴──────────┐
-        ▼                     ▼
- Authentication          Booking APIs
-        │                     │
-        └──────────┬──────────┘
-                   ▼
-            Service Layer
-                   │
-                   ▼
-           Spring Data JPA
-                   │
-                   ▼
-                MySQL
- 
-                   │
-                   ▼
-      Spring Application Events
-                   │
-                   ▼
-       Asynchronous Tasks
-    • Email Notification
-    • Ticket Generation
-    • Loyalty Point Update
+                    │
+            Spring Security
+                    │
+            JWT Authentication
+                    │
+             REST Controllers
+                    │
+              Service Layer
+      ┌─────────────┼─────────────┐
+      │             │             │
+Transaction    Booking Logic   Spring Events
+Management                      │
+      │                         ▼
+      ▼                  Async Listeners
+ Repository                     │
+      │               Email / Ticket / Loyalty
+      ▼
+    MySQL
 ```
  
 ---
