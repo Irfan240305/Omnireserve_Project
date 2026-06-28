@@ -1,7 +1,8 @@
 # OmniReserve
  
 A production-inspired backend seat reservation system built with Spring Boot that demonstrates secure authentication, optimistic locking, asynchronous event processing, and transaction management to safely handle concurrent booking requests without double-booking.
- 
+
+Java 21 | Spring Boot | Spring Security | MySQL | Docker | JWT | Maven | JPA | Hibernate
 ---
  
 ## Overview
@@ -114,24 +115,14 @@ This is achieved using optimistic locking (`@Version`) on the Seat entity. When 
 ### Authentication
  
 ```
-POST /auth/register            Register a new user
-POST /auth/login               Authenticate and receive a JWT
-```
- 
-### Seats
- 
-```
-POST /seats                    Add a new seat
-GET  /seats                    Get all seats (paginated)
-GET  /seats/{seatNumber}       Get a seat by its seat number
-```
- 
-### Bookings
- 
-```
-POST   /bookings               Book a seat
-DELETE /bookings/{bookingId}   Cancel a booking
-GET    /bookings/user/{userId} Get all bookings for a user
+| Method | Endpoint       | Purpose              |
+| ------ | -------------- | -------------------- |
+| POST   | /auth/register | Register user        |
+| POST   | /auth/login    | Authenticate user    |
+| POST   | /bookings      | Reserve a seat       |
+| DELETE | /bookings/{id} | Cancel booking       |
+| GET    | /seats         | List available seats |
+
 ```
  
 > All endpoints except `/auth/**` require a valid JWT passed in the `Authorization: Bearer <token>` header.
