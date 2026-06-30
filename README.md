@@ -2,7 +2,7 @@
  
 A production-inspired backend seat reservation system built with Spring Boot that demonstrates secure authentication, optimistic locking, asynchronous event processing, and transaction management to safely handle concurrent booking requests without double-booking.
 
-Java 21 | Spring Boot | Spring Security | MySQL | Docker | JWT | Maven | JPA | Hibernate
+Java 21 | Spring Boot | Spring Security | MySQL | Docker | JWT | Maven | JPA | Hibernate | Google Gemini LLM
 ---
  
 ## Overview
