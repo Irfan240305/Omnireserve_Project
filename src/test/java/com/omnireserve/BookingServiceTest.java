@@ -7,6 +7,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.context.ApplicationEventPublisher;
 
 import com.omnireserve.entity.Seat;
 import com.omnireserve.entity.SeatStatus;
@@ -24,6 +25,7 @@ import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
 public class BookingServiceTest {
+  @Mock private ApplicationEventPublisher eventPublisher;
 
   @Mock private UserRepository userRepository;
   @Mock private SeatRepository seatRepository;  
