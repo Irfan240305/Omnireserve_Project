@@ -26,6 +26,7 @@ The project demonstrates practical backend development concepts including authen
 * **Testing:** JUnit 5, Mockito
 * **Containerization:** Docker, Docker Compose
 * **Utilities:** Lombok
+* * **AI Integration:** Google Gemini API
 ---
  
 ## Key Features
@@ -40,6 +41,7 @@ The project demonstrates practical backend development concepts including authen
 * Centralized exception handling with consistent API responses
 * Factory, Strategy, and Observer design pattern implementations
 * Fully containerized deployment using Docker and Docker Compose
+* Natural-language booking powered by the Gemini API — converts plain-English requests (e.g. "Book seat A1 for user 5") into structured commands that invoke the existing booking workflow
 ---
  
 ## Engineering Concepts Demonstrated
@@ -53,6 +55,7 @@ The project demonstrates practical backend development concepts including authen
 * Asynchronous Processing
 * Event-Driven Architecture
 * Global Exception Handling
+* LLM Integration / Natural-Language Processing
 * Request Validation
 * Design Patterns
   * Factory Pattern
@@ -100,6 +103,14 @@ User A ───────┐
               │
 User B ───────┘
 ```
+## AI-Powered Booking
+
+OmniReserve supports natural-language booking through the Gemini API. A user can type a plain-English request, and the system extracts the structured booking details and routes them through the existing, fully-validated booking workflow — preserving all concurrency control and transaction guarantees. The AI handles only language understanding; the trusted backend handles all logic and data integrity.
+
+Example:
+POST /ai/book
+Body: "Book seat A1 for user 5"
+→ extracts {seatNumber: "A1", userId: 5} → books via existing bookSeat logic
  
 **Result**
  
